@@ -1,0 +1,83 @@
+.navbar-div {
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.logo {
+  max-height: 30px;
+}
+
+.nav-item {
+  margin-left: 20px;
+}
+
+.img-fluid {
+  width: 100%;
+}
+
+.jumbotron {
+  margin-top: 0%;
+  margin-bottom: 0%;
+}
+
+.login-body {
+  background-color: CadetBlue;
+}
+
+.form-group {
+  height: 50px;
+}
+
+.LoginForm {
+  background-color: white;
+  padding: 5%;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  margin-bottom: auto;
+  max-width: 50%;
+  min-width: 200px;
+}
+
+.LoginForm > h1 {
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+#loginButton {
+  display: block;
+  margin: auto;
+  width: 10%;
+}
+
+.registerForm {
+  background-color: white;
+  padding: 1%;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  margin-bottom: auto;
+  max-width: 50%;
+  min-width: 200px;
+}
+
+.registerForm > div {
+  margin-top: 3%;
+}
+
+.gallery {
+  height: 600px;
+}
+
+.gallery-img {
+  float: left;
+  padding: 5px;
+  width: 50%;
+  height: 100%;
+}
