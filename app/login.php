@@ -13,32 +13,21 @@
   </head>
   <body class="login-body">
 
-    <form class="registerForm">
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label>First name</label>
-          <input type="text" class="form-control" placeholder="First name">
-        </div>
-        <div class="form-group col-md-6">
-          <label>Last name</label>
-          <input type="password" class="form-control" placeholder="Last name">
+    <form class="LoginForm">
+      <h1>Hello, fill this form in order to proceed</h1>
+      <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">OIB</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="inputOIB" placeholder="OIB">
         </div>
       </div>
-      <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputEmail4">OIB</label>
-          <input type="email" class="form-control" id="inputOib" placeholder="OIB">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputPassword4">Password</label>
+      <div class="form-group row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-10">
           <input type="password" class="form-control" id="inputPassword" placeholder="Password">
         </div>
       </div>
-      <div class="form-group">
-        <label for="inputAddress">Address</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-      </div>
-      <button onclick="window.location.href = 'home.html';" type="button" class="btn btn-primary" id="registerButton">Register</button>
+      <button onclick="window.location.href = 'home.php';" type="button" class="btn btn-primary" id="loginButton">Log in</button>
     </form>
 
     <!-- Optional JavaScript -->

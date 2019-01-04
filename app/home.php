@@ -11,7 +11,7 @@
 
     <title>Tvrka</title>
   </head>
-  <body class="gallery-body">
+  <body>
     <div class="navbar-div">
       <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,39 +21,24 @@
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item active">
+              <a class="nav-link active" href="">Home<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="gallery.html">Gallery</a>
+              <a class="nav-link" href="">Gallery</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
+              <a class="nav-link" href="">Explore</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="explore.html">Explore</a>
+              <a class="nav-link" href="">User</a>
             </li>
           </ul>
           <div class="user-form">
-            <a class="btn btn-secondary" href="login.html" role="button">Login</a>
-            <a class="btn btn-secondary" href="register.html" role="button">Register</a>
+            <a class="btn btn-secondary" href="index.php" role="button">Logout</a>
           </div>
         </div>
       </nav>
-    </div>
-
-    <div>
-      <ul id="gallery">
-        <li><img src="src/garage1.jpg" class="gallery-img" alt="Responsive image"></li>
-        <li><img src="src/workshop1.jpg" class="gallery-img" alt="Responsive image"></li>
-      </ul>
-    </div>
-
-    <div class="jumbotron">
-      <h1 class="display-4">Hello, world!</h1>
-      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-      <hr class="my-4">
-      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
     </div>
 
     <!-- Optional JavaScript -->
