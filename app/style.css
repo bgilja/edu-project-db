@@ -1,8 +1,6 @@
-.navbar-div {
-  margin-left: 2%;
-  margin-right: 2%;
-  margin-bottom: 5px;
-  margin-top: 5px;
+#nav1 {
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 .logo {
@@ -10,7 +8,8 @@
 }
 
 .nav-item {
-  margin-left: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .img-fluid {
@@ -18,8 +17,10 @@
 }
 
 .jumbotron {
-  margin-top: 0%;
-  margin-bottom: 0%;
+  margin: auto;
+  padding-left: 2%;
+  padding-right: 2%;
+  background-color: white;
 }
 
 .login-body {
@@ -61,23 +62,34 @@
   font-size: 18px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10%;
-  margin-bottom: auto;
+  margin-top: 12%;
   max-width: 50%;
   min-width: 200px;
 }
 
 .registerForm > div {
-  margin-top: 3%;
+  margin-top: 12px;
+  margin-bottom: 10px;
 }
 
-.gallery {
-  height: 600px;
+#registerButton {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+  margin-top: 50px;
 }
 
-.gallery-img {
-  float: left;
-  padding: 5px;
-  width: 50%;
-  height: 100%;
+#gallery {
+  display: inline;
+  margin-left: 20px;
+}
+
+#gallery > li {
+  display: inline;
+}
+
+#gallery > li > img {
+  height: 550px;
+  margin-top: 5px;
 }
