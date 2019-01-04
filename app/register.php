@@ -13,32 +13,42 @@
   </head>
   <body class="login-body">
 
-    <form class="registerForm">
+    <form class="registerForm" action="registration_process.php" method="post">
       <div class="form-row">
         <div class="form-group col-md-6">
           <label>First name</label>
-          <input type="text" class="form-control" placeholder="First name">
+          <input type="text" class="form-control" placeholder="First name" name="first_name">
         </div>
         <div class="form-group col-md-6">
           <label>Last name</label>
-          <input type="password" class="form-control" placeholder="Last name">
+          <input type="text" class="form-control" placeholder="Last name" name="last_name">
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="inputEmail4">OIB</label>
-          <input type="email" class="form-control" id="inputOib" placeholder="OIB">
+          <label for="inputOib4">OIB</label>
+          <input type="text" class="form-control" id="inputOib" placeholder="OIB" name="oib">
         </div>
         <div class="form-group col-md-6">
           <label for="inputPassword4">Password</label>
-          <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+          <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputPhone">Phone Number</label>
+          <input type="text" class="form-control" id="inputPhone" placeholder="0911234567" name="phone">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputYear">Year of Birth</label>
+          <input type="number" class="form-control" id="inputYear" placeholder="1960" name="year">
         </div>
       </div>
       <div class="form-group">
         <label for="inputAddress">Address</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="address">
       </div>
-      <button onclick="window.location.href = 'home.php';" type="button" class="btn btn-primary" id="registerButton">Register</button>
+      <input type="submit" class="btn btn-primary" id="registerButton" value="Login">
     </form>
 
     <!-- Optional JavaScript -->

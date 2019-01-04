@@ -43,37 +43,35 @@
       </nav>
     </div>
 
-    <?php
-      echo "Konekcija<br>";
-      $servername = "127.0.0.1";
-      $username = "borna";
-      $password = "Borna_123";
-      $dbname = "popravak_vozila";
-      // Stvaranje konekcije na bazu
-      $conn = new mysqli($servername, $username, $password, $dbname);
-      echo "Konekcija<br>";
-      // Provjera uspjesnosti spajanja na bazu
-      if ($conn->connect_error) {
-        echo "Greska<br>";
-        die("Uspostavljanje konekcije na bazu nije uspjelo: ". $conn->connect_error);
-      }
-      echo "SQL<br>";
-      $sql = "SELECT id, naziv, cijena FROM Usluga";
-      $stmt = $conn->prepare($sql);
-      $stmt->execute();
-      $result = $stmt->get_result();
-      //  Provjera ima li rezultata
-      if ($result->num_rows > 0) {
-        // Printanje rezultata
-        while($row = $result->fetch_assoc()) {
-            echo "aaa";
+    <div class="price_list">
+      <?php
+        $servername = "127.0.0.1";
+        $username = "student";
+        $password = "student";
+        $dbname = "popravak_vozila";
+        // Stvaranje konekcije na bazu
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Provjera uspjesnosti spajanja na bazu
+        if ($conn->connect_error) {
+          die("Uspostavljanje konekcije na bazu nije uspjelo: ". $conn->connect_error);
         }
-      } else {
-        echo "Nema rezultata";
-      }
-      //  Zatvaranje konekcije
-      $stmt->close();
-    ?>
+        $sql = "SELECT id, naziv, cijena FROM Usluga";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        //  Provjera ima li rezultata
+        if ($result->num_rows > 0) {
+          // Printanje rezultata
+          while($row = $result->fetch_assoc()) {
+              echo $row["id"]. ": " . $row["naziv"]. " " . $row["cijena"]. " kn<br>";
+          }
+        } else {
+          echo "Nema rezultata";
+        }
+        //  Zatvaranje konekcije
+        $stmt->close();
+      ?>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

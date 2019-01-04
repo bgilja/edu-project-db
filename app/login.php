@@ -13,21 +13,21 @@
   </head>
   <body class="login-body">
 
-    <form class="LoginForm">
+    <form class="LoginForm" action="login_process.php" method="POST">
       <h1>Hello, fill this form in order to proceed</h1>
       <div class="form-group row">
         <label for="staticEmail" class="col-sm-2 col-form-label">OIB</label>
         <div class="col-sm-10">
-          <input type="email" class="form-control" id="inputOIB" placeholder="OIB">
+          <input type="number" class="form-control" id="inputOIB" placeholder="OIB" name="oib">
         </div>
       </div>
       <div class="form-group row">
         <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
         <div class="col-sm-10">
-          <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+          <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="pass">
         </div>
       </div>
-      <button onclick="window.location.href = 'home.php';" type="button" class="btn btn-primary" id="loginButton">Log in</button>
+      <input type="submit" class="btn btn-primary" id="loginButton" value="Login">
     </form>
 
     <!-- Optional JavaScript -->
