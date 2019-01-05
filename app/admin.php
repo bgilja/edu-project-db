@@ -21,17 +21,14 @@
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link active" href="">Home<span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link active" href="">Admin<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">Gallery</a>
+              <a class="nav-link" href="radionice.php">Radionice</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="zaposlenici.php">Zaposlenici</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="">User</a>
             </li>
           </ul>
           <div class="user-form">
@@ -41,10 +38,13 @@
       </nav>
     </div>
 
-    <div class="hello_user">
-      <?php
-        
-      ?>
+    <img src="src/rimac.jpg" class="img-fluid" alt="Responsive image">
+
+    <div class="jumbotron">
+      <h1 class="display-4">Hello, world!</h1>
+      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+      <hr class="my-4">
+      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

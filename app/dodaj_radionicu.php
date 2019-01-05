@@ -1,6 +1,8 @@
 <?php
 
   $id = $_POST['id'];
+  $address = $_POST['address'];
+  $phone = $_POST['phone'];
 
   $servername = "127.0.0.1";
   $username = "student"; //promjenio zbog baze na svom računalu, K
@@ -14,7 +16,9 @@
   }
 
 
-  $query = "DELETE FROM zaposlenik WHERE id = " . $id;
+  $query = "INSERT INTO `radionica`(`adresa`, `broj_telefona`) VALUES ('" . $address . "', '" . $phone . "')";
+
+
 
   $result = mysqli_query($link, $query);
 
@@ -22,6 +26,6 @@
   mysqli_close($link);
 
 
-  header( 'Location: zaposlenici.php');
+  header( 'Location: radionice.php');
 
 ?>

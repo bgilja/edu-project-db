@@ -1,6 +1,6 @@
 .navbar-div {
   border-bottom: solid;
-  border-color: #d9d9d9;
+  border-color: black;
 }
 
 #nav1 {
@@ -103,4 +103,16 @@
   margin-left: 5%;
   margin-right: 5%;
   margin-top: 50px;
+}
+
+#dodaj_zaposlenika_h3 {
+  margin-top: 50px;
+}
+
+#dodaj_zaposlenika > div {
+  min-height: 75px;
+}
+
+#dodaj_zaposlenika > div > label{
+  margin-bottom: 10px;
 }

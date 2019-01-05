@@ -21,17 +21,14 @@
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link active" href="">Home<span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link" href="admin.php">Admin</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">Gallery</a>
+              <a class="nav-link" href="radionice.php">Radionice<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="zaposlenici.php">Zaposlenici</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="">User</a>
+              <a class="nav-link active" href="">Zaposlenici</a>
             </li>
           </ul>
           <div class="user-form">
@@ -44,13 +41,13 @@
     <div class="price_list">
       <h3>Trenutno aktivni zaposlenici: </h3>
 
-      <table border="1">      
+      <table border="1" id="zaposlenici_table" class="table">
       <tr><td>Id</td><td>Ime</td><td>Prezime</td><td>Satnica</td><td>Opcija</td></tr>
 
       <?php
-        $servername = "127.0.0.1"; 
-        $username = "root"; //promjenio zbog baze na svom računalu, K
-        $password = "vertrigo"; //promjenio zbog baze na svom računalu, K
+        $servername = "127.0.0.1";
+        $username = "student"; //promjenio zbog baze na svom računalu, K
+        $password = "student"; //promjenio zbog baze na svom računalu, K
         $dbname = "popravak_vozila";
         // Stvaranje konekcije na bazu
         $link = new mysqli($servername, $username, $password, $dbname);
@@ -66,29 +63,43 @@
         while($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
           print("<tr>");
           print("<td>" . $row["id"] . "</td><td>" . $row["ime"] . "</td><td>" . $row["prezime"] . "</td><td>" . $row["satnica"] . "</td>");
-          print('<td> 
+          print('<td>
                 <form action="izbrisi_zaposlenika.php" method = "POST">
                 <input type="hidden" name="id" value="' . $row["id"] . '">
                 <input type="submit" value="Izbriši" > </form></td>');
           print("</tr>");
-        }    
+        }
 
         mysqli_close($link);
-        
+
       ?>
+
       </table>
 
-      <p>
-      <form action="dodaj_zaposlenika.php" method="POST">
-        ID: <input type="number" name="id"><br>
-        Ime: <input type="text" name="ime"> <br>
-        Prezime: <input type="text" name="prezime"> <br>
-        Satnica: <input type="number" name="satnica"> <br>
-        Password: <input type="text" name="password"> <br>
-        <input type="submit" value="Dodaj">
+      <h3 id="dodaj_zaposlenika_h3">Za dodavanje zaposlenika ispunite formular</h3>
+      <form action="dodaj_zaposlenika.php" method="post" id="dodaj_zaposlenika">
+        <div class="form-row">
+          <div class="col">
+            <label for="exampleInputFirstName1">Ime</label>
+            <input type="text" class="form-control" id="exampleInputFirstName1" placeholder="Ime" name="ime">
+          </div>
+          <div class="col">
+            <label for="exampleInputPrezime1">Prezime</label>
+            <input type="text" class="form-control" id="exampleInputPrezime1" placeholder="Prezime" name="prezime">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <label for="exampleInputPassword1">Lozinka</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Lozinka" name="password">
+          </div>
+          <div class="col">
+            <label for="exampleInputSatnica1">Satnica</label>
+            <input type="number" class="form-control" id="exampleInputSatnica1" placeholder="Satnica" name="satnica">
+          </div>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Dodaj" id="exampleInputButton1">
       </form>
-      </p> 
-
 
     </div>
     <!-- Optional JavaScript -->

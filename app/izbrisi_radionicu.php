@@ -14,7 +14,7 @@
   }
 
 
-  $query = "DELETE FROM zaposlenik WHERE id = " . $id;
+  $query = "DELETE FROM radionica WHERE id = " . $id;
 
   $result = mysqli_query($link, $query);
 
@@ -22,6 +22,6 @@
   mysqli_close($link);
 
 
-  header( 'Location: zaposlenici.php');
+  header( 'Location: radionice.php');
 
 ?>
