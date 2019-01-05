@@ -4,8 +4,8 @@
   $pass = $_POST['pass'];
 
   $servername = "127.0.0.1";
-  $username = "student";
-  $password = "student";
+  $username = "root";
+  $password = "vertrigo";
   $dbname = "popravak_vozila";
   // Stvaranje konekcije na bazu
   $conn = new mysqli($servername, $username, $password, $dbname);

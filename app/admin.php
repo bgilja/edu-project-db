@@ -13,7 +13,7 @@
   </head>
   <body>
     <div class="navbar-div">
-      <nav class="navbar navbar-expand-lg navbar-light bg-white" id="nav1">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,36 +22,30 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link active" href="">Home<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="gallery.php">Gallery</a>
+              <a class="nav-link" href="">Gallery</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.php">Contact</a>
+              <a class="nav-link" href="zaposlenici.php">Zaposlenici</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="explore.php">Explore</a>
+              <a class="nav-link" href="">User</a>
             </li>
-            
           </ul>
           <div class="user-form">
-            <a class="btn btn-secondary" href="login.php" role="button">Login</a>
-            <a class="btn btn-secondary" href="register.php" role="button">Register</a>
+            <a class="btn btn-secondary" href="index.php" role="button">Logout</a>
           </div>
         </div>
       </nav>
     </div>
 
-    <img src="src/rimac.jpg" class="img-fluid" alt="Responsive image">
-
-    <div class="jumbotron">
-      <h1 class="display-4">Hello, world!</h1>
-      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-      <hr class="my-4">
-      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <div class="hello_user">
+      <?php
+        
+      ?>
     </div>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

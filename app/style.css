@@ -1,3 +1,8 @@
+.navbar-div {
+  border-bottom: solid;
+  border-color: #d9d9d9;
+}
+
 #nav1 {
   padding-left: 2%;
   padding-right: 2%;
