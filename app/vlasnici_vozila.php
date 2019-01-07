@@ -12,7 +12,6 @@
     <title>Tvrka</title>
   </head>
   <body>
-
     <div class="navbar-div">
       <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,33 +22,30 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="index.php">Početna</a>
+              <a class="nav-link active" href="">Vozila</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="gallery.php">Galerija</a>
+              <a class="nav-link" href="vlasnici_contact.php?oib=<?php echo $_GET['oib']?>">Kontakt</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="contact.php">Radionice</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="explore.php">Cjenik</a>
+              <a class="nav-link" href="vlasnici_cjenik.php?oib=<?php echo $_GET['oib']?>">Cjenik</a>
             </li>
           </ul>
           <div class="user-form">
-            <a class="btn btn-secondary" href="login.php" role="button">Login</a>
-            <a class="btn btn-secondary" href="register.php" role="button">Register</a>
+            <a class="btn btn-secondary" href="index.php" role="button">Logout</a>
           </div>
         </div>
       </nav>
     </div>
 
     <div class="price_list">
-      <h3>Trenutne radionice: </h3>
+      <h3>Moja vozila: </h3>
 
       <table border="1" id="zaposlenici_table" class="table">
-      <tr><td>Id</td><td>Adresa</td><td>Broj telefona</td></tr>
+      <tr><td>Broj sasije</td><td>Marka</td><td>Model</td><td>Godina proizvodnje</td></tr>
 
       <?php
+        $oib = $_GET['oib'];
         $servername = "127.0.0.1";
         $username = "student"; //promjenio zbog baze na svom računalu, K
         $password = "student"; //promjenio zbog baze na svom računalu, K
@@ -61,13 +57,13 @@
           die("Uspostavljanje konekcije na bazu nije uspjelo: ". $link->connect_error);
         }
 
-        $sql = "SELECT id, adresa, broj_telefona FROM Radionica";
+        $sql = "SELECT broj_sasije, marka, model, godina_proizvodnje FROM Vozilo WHERE oib_vlasnik = $oib";
         $result = mysqli_query($link, $sql);
 
 
         while($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
           print("<tr>");
-          print("<td>" . $row["id"] . "</td><td>" . $row["adresa"] . "</td><td>" . $row["broj_telefona"] . "</td> ");
+          print("<td>" . $row["broj_sasije"] . "</td><td>" . $row["marka"] . "</td><td>" . $row["model"]. "</td><td>" . $row["godina_proizvodnje"] . "</td>");
           print("</tr>");
         }
 
@@ -77,12 +73,37 @@
 
       </table>
 
+      <h3 id="dodaj_zaposlenika_h3">Dodavanje vozila:</h3>
+      <form action="dodaj_vozilo.php" method="post" id="dodaj_zaposlenika">
+        <div class="form-row">
+          <div class="col">
+            <label for="exampleInputFirstName1">Marka</label>
+            <input type="text" class="form-control" id="exampleInputFirstName1" placeholder="Marka" name="marka">
+          </div>
+          <div class="col">
+            <label for="exampleInputPrezime1">Model</label>
+            <input type="text" class="form-control" id="exampleInputPrezime1" placeholder="Model" name="model">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <label for="exampleInputPassword1">Broj sasije</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Broj sasije" name="broj_sasije">
+          </div>
+          <div class="col">
+            <label for="exampleInputSatnica1">Godina proizvodnje</label>
+            <input type="number" class="form-control" id="exampleInputSatnica1" placeholder="Godina proizvodnje" name="godina_proizvodnje">
+          </div>
+        </div>
+        <input type="hidden" name="oib_vlasnika" value="<?php echo $_GET['oib']?>">
+        <input class="btn btn-primary" type="submit" value="Dodaj" id="exampleInputButton1">
+      </form>
 
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
   </body>
 </html>

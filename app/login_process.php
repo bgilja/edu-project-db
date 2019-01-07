@@ -20,7 +20,7 @@
 
   $flag = false;
   while($row = $result->fetch_assoc()) {
-      if ($row["oib"] === $oib && $row["password"] === $pass) {
+      if ($row["oib"] == $oib && $row["password"] == $pass) {
         $flag = true;
       }
   }
@@ -28,7 +28,7 @@
   $stmt->close();
 
   if ($flag) {
-    header( 'Location: home.php?oib='.$oib );
+    header( 'Location: vlasnici_vozila.php?oib='.$oib );
   } else {
     header( 'Location:  login.php' );
   }

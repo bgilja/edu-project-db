@@ -116,3 +116,11 @@
 #dodaj_zaposlenika > div > label{
   margin-bottom: 10px;
 }
+
+#zaposlenici_table {
+  min-width: 80%;
+}
+
+#broj_popravaka {
+  max-width: 50px;
+}

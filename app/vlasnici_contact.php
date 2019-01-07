@@ -23,55 +23,57 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="index.php">Početna</a>
+              <a class="nav-link" href="vlasnici_vozila.php?oib=<?php echo $_GET['oib']?>">Vozila</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="gallery.php">Galerija</a>
+              <a class="nav-link active" href="">Kontakt</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.php">Radionice</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="explore.php">Cjenik</a>
+              <a class="nav-link" href="vlasnici_cjenik.php?oib=<?php echo $_GET['oib']?>">Cjenik</a>
             </li>
           </ul>
           <div class="user-form">
-            <a class="btn btn-secondary" href="login.php" role="button">Login</a>
-            <a class="btn btn-secondary" href="register.php" role="button">Register</a>
+            <a class="btn btn-secondary" href="index.php" role="button">Logout</a>
           </div>
         </div>
       </nav>
     </div>
 
     <div class="price_list">
+      <h3>Trenutne radionice: </h3>
+
+      <table border="1" id="zaposlenici_table" class="table">
+      <tr><td>Adresa</td><td>Broj telefona</td></tr>
+
       <?php
-        $servername = "127.0.0.1"; //promjenio zbog baze na svom računalu, K
+        $servername = "127.0.0.1";
         $username = "student"; //promjenio zbog baze na svom računalu, K
         $password = "student"; //promjenio zbog baze na svom računalu, K
         $dbname = "popravak_vozila";
         // Stvaranje konekcije na bazu
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        $link = new mysqli($servername, $username, $password, $dbname);
         // Provjera uspjesnosti spajanja na bazu
-        if ($conn->connect_error) {
-          die("Uspostavljanje konekcije na bazu nije uspjelo: ". $conn->connect_error);
+        if ($link->connect_error) {
+          die("Uspostavljanje konekcije na bazu nije uspjelo: ". $link->connect_error);
         }
-        $sql = "SELECT id, naziv, cijena FROM Usluga";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        //  Provjera ima li rezultata
-        if ($result->num_rows > 0) {
-          // Printanje rezultata
-          while($row = $result->fetch_assoc()) {
-              echo $row["id"]. ": " . $row["naziv"]. " " . $row["cijena"]. " kn<br>";
-          }
-        } else {
-          echo "Nema rezultata";
+
+        $sql = "SELECT id, adresa, broj_telefona FROM Radionica";
+        $result = mysqli_query($link, $sql);
+
+
+        while($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
+          print("<tr>");
+          print("<td>" . $row["adresa"] . "</td><td>" . $row["broj_telefona"] . "</td> ");
+          print("</tr>");
         }
-        //  Zatvaranje konekcije
-        $stmt->close();
+
+        mysqli_close($link);
+
       ?>
-    </div>
+
+      </table>
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

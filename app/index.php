@@ -22,18 +22,18 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.php">Početna</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="gallery.php">Gallery</a>
+              <a class="nav-link" href="gallery.php">Galerija</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.php">Contact</a>
+              <a class="nav-link" href="contact.php">Radionice</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="explore.php">Explore</a>
+              <a class="nav-link" href="explore.php">Usluge</a>
             </li>
-            
+
           </ul>
           <div class="user-form">
             <a class="btn btn-secondary" href="login.php" role="button">Login</a>

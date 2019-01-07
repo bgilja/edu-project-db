@@ -23,21 +23,17 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="index.php">Početna</a>
+              <a class="nav-link" href="vlasnici_vozila.php?oib=<?php echo $_GET['oib']?>">Vozila</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="gallery.php">Galerija</a>
+              <a class="nav-link" href="vlasnici_contact.php?oib=<?php echo $_GET['oib']?>">Kontakt</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.php">Radionice</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="explore.php">Cjenik</a>
+              <a class="nav-link active" href="">Cjenik</a>
             </li>
           </ul>
           <div class="user-form">
-            <a class="btn btn-secondary" href="login.php" role="button">Login</a>
-            <a class="btn btn-secondary" href="register.php" role="button">Register</a>
+            <a class="btn btn-secondary" href="index.php" role="button">Logout</a>
           </div>
         </div>
       </nav>
@@ -72,6 +68,7 @@
         $stmt->close();
       ?>
     </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
