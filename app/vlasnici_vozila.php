@@ -32,6 +32,7 @@
             </li>
           </ul>
           <div class="user-form">
+            Prijavljeni ste kao vlasnik
             <a class="btn btn-secondary" href="index.php" role="button">Logout</a>
           </div>
         </div>
@@ -39,10 +40,40 @@
     </div>
 
     <div class="price_list">
-      <h3>Moja vozila: </h3>
+      <?php
+        $oib = $_GET['oib'];
+        $servername = "127.0.0.1";
+        $username = "student"; 
+        $password = "student"; 
+        $dbname = "popravak_vozila";
+        // Stvaranje konekcije na bazu
+        $link = new mysqli($servername, $username, $password, $dbname);
+        // Provjera uspjesnosti spajanja na bazu
+        if ($link->connect_error) {
+          die("Uspostavljanje konekcije na bazu nije uspjelo: ". $link->connect_error);
+        }
 
-      <table border="1" id="zaposlenici_table" class="table">
-      <tr><td>Broj sasije</td><td>Marka</td><td>Model</td><td>Godina proizvodnje</td></tr>
+        $sql = "SELECT ime, prezime FROM vlasnik WHERE oib = $oib";
+        $result = mysqli_query($link, $sql);
+
+
+        while($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
+          print("<h3>");
+          print("Pozdrav " . $row["ime"] . " " . $row["prezime"] . "!");
+          print("</h3>");
+        }
+
+        mysqli_close($link);
+
+      ?>
+      
+    </div>
+
+    <div class="price_list">
+      <h4>Moja vozila: </h4>
+
+      <table border="1" align="center" id="zaposlenici_table" class="table">
+      <tr><th>Broj sasije</th><th>Marka</th><th>Model</th><th>Godina proizvodnje</th></tr>
 
       <?php
         $oib = $_GET['oib'];
@@ -73,7 +104,7 @@
 
       </table>
 
-      <h3 id="dodaj_zaposlenika_h3">Dodavanje vozila:</h3>
+      <h4 id="dodaj_zaposlenika_h3">Dodavanje vozila:</h4>
       <form action="dodaj_vozilo.php" method="post" id="dodaj_zaposlenika">
         <div class="form-row">
           <div class="col">

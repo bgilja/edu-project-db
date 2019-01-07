@@ -33,6 +33,7 @@
             </li>
           </ul>
           <div class="user-form">
+            Prijavljeni ste kao vlasnik
             <a class="btn btn-secondary" href="index.php" role="button">Logout</a>
           </div>
         </div>

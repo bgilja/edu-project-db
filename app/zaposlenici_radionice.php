@@ -46,7 +46,7 @@
       <h3>Trenutne radionice: </h3>
 
       <table border="1" id="zaposlenici_table" class="table">
-      <tr><td>Id</td><td>Adresa</td><td>Broj telefona</td></tr>
+      <tr><th>Id</th><th>Adresa</th><th>Broj telefona</th></tr>
 
       <?php
         $servername = "127.0.0.1";

@@ -45,7 +45,7 @@
       <h3>Trenutno aktivni zaposlenici: </h3>
 
       <table border="1" id="zaposlenici_table" class="table">
-      <tr><td>Id</td><td>Ime</td><td>Prezime</td><td>Satnica</td><td id="broj_popravaka">Broj popravaka</td></tr>
+      <tr><th>Id</th><th>Ime</th><th>Prezime</th><th>Satnica</th><th id="broj_popravaka">Broj popravaka</th></tr>
 
       <?php
         $servername = "127.0.0.1";

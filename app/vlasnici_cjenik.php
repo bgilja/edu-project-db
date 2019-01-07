@@ -33,6 +33,7 @@
             </li>
           </ul>
           <div class="user-form">
+            Prijavljeni ste kao vlasnik
             <a class="btn btn-secondary" href="index.php" role="button">Logout</a>
           </div>
         </div>
@@ -40,6 +41,9 @@
     </div>
 
     <div class="price_list">
+
+    <h3>Usluge i cijene usluga koje vršimo:</h3>
+    <ul>
       <?php
         $servername = "127.0.0.1"; //promjenio zbog baze na svom računalu, K
         $username = "student"; //promjenio zbog baze na svom računalu, K
@@ -58,15 +62,21 @@
         //  Provjera ima li rezultata
         if ($result->num_rows > 0) {
           // Printanje rezultata
-          while($row = $result->fetch_assoc()) {
-              echo $row["id"]. ": " . $row["naziv"]. " " . $row["cijena"]. " kn<br>";
+          // while($row = $result->fetch_assoc()) {
+          //     echo $row["id"]. ": " . $row["naziv"]. " " . $row["cijena"]. " kn<br>";
+          // }
+          while($row = $result->fetch_assoc()){
+            print("<li>" . $row["naziv"] . " - cijena: " . $row["cijena"] . " kn");
           }
+
+
         } else {
           echo "Nema rezultata";
         }
         //  Zatvaranje konekcije
         $stmt->close();
       ?>
+    </ul>
     </div>
 
     <!-- Optional JavaScript -->

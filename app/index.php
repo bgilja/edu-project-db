@@ -31,7 +31,7 @@
               <a class="nav-link" href="contact.php">Radionice</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="explore.php">Usluge</a>
+              <a class="nav-link" href="explore.php">Cjenik</a>
             </li>
 
           </ul>

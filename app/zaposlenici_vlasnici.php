@@ -46,7 +46,7 @@
       <h3>Vlasnici: </h3>
 
       <table border="1" id="zaposlenici_table" class="table">
-      <tr><td>OIB</td><td>Ime</td><td>Prezime</td></tr>
+      <tr><th>OIB</th><th>Ime</th><th>Prezime</th></tr>
 
       <?php
         $servername = "127.0.0.1";

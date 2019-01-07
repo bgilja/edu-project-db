@@ -42,11 +42,19 @@
       </nav>
     </div>
 
+    <!-- Gumb za upisat popravak -->
+    <div class="price_list">
+      <form action="popravi_vozilo.php?id=<?php echo $_GET['id']?>" method="POST">
+        <input type="hidden" name="id" value="2">
+        <input type="submit" class="btn btn-secondary" value="Upiši novi popravak"> 
+      </form>
+    </div>
+
     <div class="price_list">
       <h3>Vozila: </h3>
 
       <table border="1" id="zaposlenici_table" class="table">
-      <tr><td>Broj sasije</td><td>Marka</td><td>Model</td><td>Godina proizvodnje</td><td>OIB vlasnika</td><td>Opcija</td></tr>
+      <tr><th>Broj sasije</th><th>Marka</th><th>Model</th><th>Godina proizvodnje</th><th>OIB vlasnika</th><th>Opcija</th></tr>
 
       <?php
         $id = $_GET['id'];
@@ -71,7 +79,8 @@
           print('<td>
                 <form action="popravi_vozilo.php" method = "POST">
                 <input type="hidden" name="id" value="2">
-                <input type="submit" value="Popravi" > </form></td>');
+                
+                <input type="submit" value="Upiši popravak" > </form></td>');
           print("</tr>");
         }
 
@@ -86,7 +95,7 @@
       <h3>Vozila koja sam popravljao: </h3>
 
       <table border="1" id="zaposlenici_table" class="table">
-      <tr><td>Broj sasije</td><td>Marka</td><td>Model</td><td>Godina proizvodnje</td><td>OIB vlasnika</td><td>Usluga</td></tr>
+      <tr><th>Broj sasije</th><th>Marka</th><th>Model</th><th>Godina proizvodnje</th><th>OIB vlasnika</th><th>Usluga</th></tr>
 
       <?php
         $servername = "127.0.0.1";
