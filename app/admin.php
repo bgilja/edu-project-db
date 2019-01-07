@@ -30,6 +30,9 @@
             <li class="nav-item">
               <a class="nav-link" href="zaposlenici.php">Zaposlenici</a>
             </li>
+            <li class="nav-item">
+            <a class="nav-link" href="usluge.php">Usluge</a>
+            </li>
           </ul>
           <div class="user-form">
             <a class="btn btn-secondary" href="index.php" role="button">Logout</a>

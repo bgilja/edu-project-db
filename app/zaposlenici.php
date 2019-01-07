@@ -30,6 +30,9 @@
             <li class="nav-item">
               <a class="nav-link active" href="">Zaposlenici</a>
             </li>
+            <li class="nav-item">
+            <a class="nav-link" href="usluge.php">Usluge</a>
+            </li>
           </ul>
           <div class="user-form">
             <a class="btn btn-secondary" href="index.php" role="button">Logout</a>
@@ -42,7 +45,7 @@
       <h3>Trenutno aktivni zaposlenici: </h3>
 
       <table border="1" id="zaposlenici_table" class="table">
-      <tr><td>Id</td><td>Ime</td><td>Prezime</td><td>Satnica</td><td>Opcija</td></tr>
+      <tr><th>Id</th><th>Ime</th><th>Prezime</th><th>Satnica</th><th>Opcija</th></tr>
 
       <?php
         $servername = "127.0.0.1";

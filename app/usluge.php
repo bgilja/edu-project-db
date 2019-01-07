@@ -25,13 +25,13 @@
               <a class="nav-link" href="admin.php">Admin</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="">Radionice<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="radionice.php">Radionice<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="zaposlenici.php">Zaposlenici</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="usluge.php">Usluge</a>
+            <a class="nav-link active" href="usluge.php">Usluge</a>
             </li>
           </ul>
           <div class="user-form">
@@ -42,15 +42,15 @@
     </div>
 
     <div class="price_list">
-      <h3>Trenutne radionice: </h3>
+      <h3>Usluge koje vršimo: </h3>
 
       <table border="1" id="zaposlenici_table" class="table">
-      <tr><th>Id</th><th>Adresa</th><th>Broj telefona</th><th>Opcija</th></tr>
+      <tr><th>Id</th><th>Naziv</th><th>Cijena (KN)</th><th>Dodatne informacije</th><th>Potreban dio</th><th>Opcije</th></tr>
 
       <?php
         $servername = "127.0.0.1";
-        $username = "student"; //promjenio zbog baze na svom računalu, K
-        $password = "student"; //promjenio zbog baze na svom računalu, K
+        $username = "student"; 
+        $password = "student"; 
         $dbname = "popravak_vozila";
         // Stvaranje konekcije na bazu
         $link = new mysqli($servername, $username, $password, $dbname);
@@ -59,15 +59,15 @@
           die("Uspostavljanje konekcije na bazu nije uspjelo: ". $link->connect_error);
         }
 
-        $sql = "SELECT id, adresa, broj_telefona FROM Radionica";
+        $sql = "SELECT id, naziv, informacije, cijena, id_dio FROM usluga";
         $result = mysqli_query($link, $sql);
 
 
         while($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
           print("<tr>");
-          print("<td>" . $row["id"] . "</td><td>" . $row["adresa"] . "</td><td>" . $row["broj_telefona"] . "</td> ");
+          print("<td>" . $row["id"] . "</td><td>" . $row["naziv"] . "</td><td>" . $row["cijena"] . "</td><td>" . $row["informacije"] . "</td><td>" . $row["id_dio"] . "</td>");
           print('<td>
-                <form action="izbrisi_radionicu.php" method = "POST">
+                <form action="izbrisi_uslugu.php" method = "POST">
                 <input type="hidden" name="id" value="' . $row["id"] . '">
                 <input type="submit" value="Izbriši" > </form></td>');
           print("</tr>");
@@ -79,15 +79,27 @@
 
       </table>
 
-      <h3 id="dodaj_zaposlenika_h3">Za dodavanje radionice ispunite formular</h3>
-      <form action="dodaj_radionicu.php" method="post" id="dodaj_zaposlenika">
-        <div class="form-group">
-          <label for="exampleInputAdresa2">Adresa</label>
-          <input type="text" class="form-control" id="exampleInputAdresa2" placeholder="Adresa" name="address">
+      <h3 id="dodaj_zaposlenika_h3">Za dodavanje usluge ispunite formular</h3>
+      <form action="dodaj_uslugu.php" method="post" id="dodaj_zaposlenika">
+        <div class="form-row">
+          <div class="col">
+            <label for="exampleInputFirstName1">Naziv</label>
+            <input type="text" class="form-control" id="exampleInputFirstName1" placeholder="Naziv" name="naziv">
+          </div>
+          <div class="col">
+            <label for="exampleInputPrezime1">Cijena</label>
+            <input type="text" class="form-control" id="exampleInputPrezime1" placeholder="Cijena u kunama" name="cijena">
+          </div>
         </div>
-        <div class="form-group">
-          <label for="exampleInputPhone2">Broj telefona</label>
-          <input type="text" class="form-control" id="exampleInputPhone2" placeholder="Broj telefona" name="phone">
+        <div class="form-row">
+          <div class="col">
+            <label for="exampleInputPassword1">Dodatne informacije</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Dodatne informacije o usluzi" name="informacije">
+          </div>
+          <div class="col">
+            <label for="exampleInputSatnica1">Potreban dio (id)</label>
+            <input type="text" class="form-control" id="exampleInputSatnica1" placeholder="Potreban dio za ugradnju" value="0" name="id_dio">
+          </div>
         </div>
         <input class="btn btn-primary" type="submit" value="Dodaj" id="exampleInputButton1">
       </form>
