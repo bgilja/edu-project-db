@@ -73,7 +73,7 @@
       <h4>Moja vozila: </h4>
 
       <table border="1" align="center" id="zaposlenici_table" class="table">
-      <tr><th>Broj sasije</th><th>Marka</th><th>Model</th><th>Godina proizvodnje</th></tr>
+      <tr><th>Broj sasije</th><th>Marka</th><th>Model</th><th>Godina proizvodnje</th><th>Povijest</th></tr>
 
       <?php
         $oib = $_GET['oib'];
@@ -95,6 +95,12 @@
         while($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
           print("<tr>");
           print("<td>" . $row["broj_sasije"] . "</td><td>" . $row["marka"] . "</td><td>" . $row["model"]. "</td><td>" . $row["godina_proizvodnje"] . "</td>");
+
+          print('<td>
+                <form action="povijest_vozila.php" method = "POST">
+                <input type="hidden" name="broj_sasije" value="' . $row["broj_sasije"] . '">
+                <input type="submit" value="Prikaži" > </form></td>');
+
           print("</tr>");
         }
 
