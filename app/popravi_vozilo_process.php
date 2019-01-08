@@ -17,19 +17,19 @@
 
 
   // tražimo cijenu usluge iz tablice "usluga"
-  $query = "SELECT cijena FROM usluga WHERE id = $id_usluga";
+  $query = "SELECT COUNT(id) as brojac FROM usluga WHERE id = $id_usluga";
   $result = mysqli_query($link, $query);
   $row = mysqli_fetch_array($result, MYSQLI_BOTH);
-  $cijena_usluge = $row["cijena"];
 
-  $query = "INSERT INTO `popravak`(`id_vozilo`, `id_usluga`, `id_zaposlenik`, `cijena`) VALUES ('" . $broj_sasije . "', '" . $id_usluga . "', " . $id_zaposlenik . ", '" . $cijena_usluge . "')";
+  if ($row['brojac'] == 1) {
+    $query = "SELECT cijena FROM usluga WHERE id = $id_usluga";
+    $result = mysqli_query($link, $query);
+    $row = mysqli_fetch_array($result, MYSQLI_BOTH);
+    $cijena_usluge = $row["cijena"];
 
-
-  //print($query);
-
-  $result = mysqli_query($link, $query);
-
-  // print($id_zaposlenik . $broj_sasije . $id_usluga);
+    $query = "INSERT INTO `popravak`(`id_vozilo`, `id_usluga`, `id_zaposlenik`, `cijena`) VALUES ('" . $broj_sasije . "', '" . $id_usluga . "', " . $id_zaposlenik . ", '" . $cijena_usluge . "')";
+    $result = mysqli_query($link, $query);
+  }
 
   //  Zatvaranje konekcije
   mysqli_close($link);

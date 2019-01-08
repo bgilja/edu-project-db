@@ -11,12 +11,39 @@
 
     <title>Tvrka</title>
   </head>
-  <body class="login-body">
+  <body>
 
-      <div class="povijest">
-      <h4>Povijest vašeg vozila:</h4>
+    <div class="navbar-div">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <img src="src/logo.jpg" class="logo">
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="vlasnici_vozila.php?oib=<?php echo $_GET['oib']?>">Vozila</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="vlasnici_contact.php?oib=<?php echo $_GET['oib']?>">Kontakt</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Cjenik</a>
+            </li>
+          </ul>
+          <div class="user-form">
+            Prijavljeni ste kao vlasnik
+            <a class="btn btn-secondary" href="index.php" role="button">Logout</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="povijest">
+    <h3>Povijest vašeg vozila:</h4>
       <div>
-        <table border="1" id="zaposlenici_table" class="table1">
+        <table border="1" id="povijest_table" class="table">
           <tr><th>Id_popravak</th><th>id_vozilo</th><th>Naziv usluge</th><th>Ime zaposlenika</th><th>Prezime zaposlenika</th><th>Cijena popravka</th></tr>
 
           <?php
@@ -25,8 +52,9 @@
 
           $servername = "127.0.0.1";
           $username = "student";
-          $password = "student"; 
+          $password = "student";
           $dbname = "popravak_vozila";
+
           // Stvaranje konekcije na bazu
           $link = new mysqli($servername, $username, $password, $dbname);
           // Provjera uspjesnosti spajanja na bazu
@@ -35,8 +63,6 @@
           }
 
           $query = "SELECT * FROM popravak WHERE id_vozilo = " . $broj_sasije;
-
-          
 
           $result = mysqli_query($link, $query);
 
@@ -72,13 +98,11 @@
 
         ?>
 
-
         </table>
 
+      </div>
+    </div>
 
-      </div>    
-      </div>  
-    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -87,5 +111,3 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 </html>
-
-

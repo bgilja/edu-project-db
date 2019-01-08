@@ -43,8 +43,8 @@
       <?php
         $oib = $_GET['oib'];
         $servername = "127.0.0.1";
-        $username = "student"; 
-        $password = "student"; 
+        $username = "student";
+        $password = "student";
         $dbname = "popravak_vozila";
         // Stvaranje konekcije na bazu
         $link = new mysqli($servername, $username, $password, $dbname);
@@ -66,7 +66,7 @@
         mysqli_close($link);
 
       ?>
-      
+
     </div>
 
     <div class="price_list">
@@ -97,7 +97,7 @@
           print("<td>" . $row["broj_sasije"] . "</td><td>" . $row["marka"] . "</td><td>" . $row["model"]. "</td><td>" . $row["godina_proizvodnje"] . "</td>");
 
           print('<td>
-                <form action="povijest_vozila.php" method = "POST">
+                <form action="povijest_vozila.php?oib=' . $oib . '" method = "POST">
                 <input type="hidden" name="broj_sasije" value="' . $row["broj_sasije"] . '">
                 <input type="submit" value="Prikaži" > </form></td>');
 

@@ -32,7 +32,10 @@
               <a class="nav-link" href="zaposlenici_vlasnici.php?id=<?php echo $_GET['id']?>">Vlasnici</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="">Vozila</a>
+              <a class="nav-link active" href="zaposlenici_vozila.php?id=<?php echo $_GET['id']?>">Vozila</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="zaposlenici_usluge.php?id=<?php echo $_GET['id']?>">Usluge</a>
             </li>
           </ul>
           <div class="user-form">
@@ -54,7 +57,7 @@
       <h3>Vozila: </h3>
 
       <table border="1" id="zaposlenici_table" class="table">
-      <tr><th>Broj sasije</th><th>Marka</th><th>Model</th><th>Godina proizvodnje</th><th>OIB vlasnika</th><th>Opcija</th></tr>
+      <tr><th>Broj sasije</th><th>Marka</th><th>Model</th><th>Godina proizvodnje</th><th>OIB vlasnika</th></tr>
 
       <?php
         $id = $_GET['id'];
@@ -76,9 +79,6 @@
         while($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
           print("<tr>");
           print("<td>" . $row["broj_sasije"] . "</td><td>" . $row["marka"] . "</td><td>" . $row["model"] . "</td><td>" . $row["godina_proizvodnje"] . "</td><td>" . $row["oib_vlasnik"] . "</td> ");
-          print('<td>
-                <form action="popravi_vozilo.php?id=' . $_GET["id"] . '" method = "POST">
-                <input type="submit" value="Upiši popravak" > </form></td>');
           print("</tr>");
         }
 
@@ -93,7 +93,7 @@
       <h3>Vozila koja sam popravljao: </h3>
 
       <table border="1" id="zaposlenici_table" class="table">
-      <tr><th>Broj sasije</th><th>Marka</th><th>Model</th><th>Godina proizvodnje</th><th>OIB vlasnika</th><th>Usluga</th></tr>
+      <tr><th>Broj sasije</th><th>Marka</th><th>Model</th><th>Godina proizvodnje</th><th>OIB vlasnika</th><th>ID Usluga</th><th>Usluga</th><th>Cijena</th></tr>
 
       <?php
         $servername = "127.0.0.1";
@@ -114,12 +114,12 @@
 
         while($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
           $id_usluga = $row["id_usluga"];
-          $sql_usluga = "SELECT naziv FROM Usluga where id = $id_usluga";
+          $sql_usluga = "SELECT naziv, cijena FROM Usluga where id = $id_usluga";
           $result_usluga = mysqli_query($link, $sql_usluga);
           $usluga_naziv = mysqli_fetch_array($result_usluga, MYSQLI_BOTH);
           print("<tr>");
           print("<td>" . $row["broj_sasije"] . "</td><td>" . $row["marka"] . "</td><td>" . $row["model"] . "</td><td>" . $row["godina_proizvodnje"] . "</td><td>" . $row["oib_vlasnik"] . "</td> ");
-          print("<td>". $usluga_naziv["naziv"] ."</td>");
+          print("<td>" . $row['id_usluga']. "</td><td>". $usluga_naziv["naziv"] ."</td><td>" . $usluga_naziv['cijena'] . "</td>");
           print("</tr>");
         }
 

@@ -26,13 +26,16 @@
               <a class="nav-link" href="zaposlenici_home.php?id=<?php echo $_GET['id']?>">Zaposlenici</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="">Radionice</a>
+              <a class="nav-link active" href="zaposlenici_radionice.php?id=<?php echo $_GET['id']?>">Radionice</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="zaposlenici_vlasnici.php?id=<?php echo $_GET['id']?>">Vlasnici</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="zaposlenici_vozila.php?id=<?php echo $_GET['id']?>">Vozila</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="zaposlenici_usluge.php?id=<?php echo $_GET['id']?>">Usluge</a>
             </li>
           </ul>
           <div class="user-form">

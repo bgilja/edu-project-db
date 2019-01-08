@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" href="">Zaposlenici</a>
+              <a class="nav-link active" href="zaposlenici_home.php?id=<?php echo $_GET['id']?>">Zaposlenici</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="zaposlenici_radionice.php?id=<?php echo $_GET['id']?>">Radionice</a>
@@ -32,6 +32,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="zaposlenici_vozila.php?id=<?php echo $_GET['id']?>">Vozila</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="zaposlenici_usluge.php?id=<?php echo $_GET['id']?>">Usluge</a>
             </li>
           </ul>
           <div class="user-form">
@@ -45,7 +48,7 @@
       <h3>Trenutno aktivni zaposlenici: </h3>
 
       <table border="1" id="zaposlenici_table" class="table">
-      <tr><th>Id</th><th>Ime</th><th>Prezime</th><th>Satnica</th><th id="broj_popravaka">Broj popravaka</th></tr>
+      <tr><th>Id</th><th>Ime</th><th>Prezime</th><th>Satnica</th><th id="broj_popravaka">Broj popravaka</th><th>Ukupna cijena popravaka</th></tr>
 
       <?php
         $servername = "127.0.0.1";
@@ -64,9 +67,13 @@
 
 
         while($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
+          $sql_broj_popravaka = "SELECT COUNT(id_popravak) as brojac, SUM(cijena) as ukupna_cijena FROM popravak WHERE id_zaposlenik = $row[id]";
+          $result_broj_popravaka = mysqli_query($link, $sql_broj_popravaka);
+          $row_broj_popravaka = mysqli_fetch_array($result_broj_popravaka, MYSQLI_BOTH);
+
           print("<tr>");
           print("<td>" . $row["id"] . "</td><td>" . $row["ime"] . "</td><td>" . $row["prezime"] . "</td><td>" . $row["satnica"] . "</td>");
-          print ("<td></td>");
+          print ("<td>" . $row_broj_popravaka['brojac'] . "</td><td>" . $row_broj_popravaka['ukupna_cijena'] . "</td>");
           print("</tr>");
         }
 

@@ -76,6 +76,7 @@
       ?>
 
       </table>
+    </div>
 
 
     <!-- Optional JavaScript -->
