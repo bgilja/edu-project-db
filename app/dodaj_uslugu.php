@@ -17,19 +17,16 @@
     die("Uspostavljanje konekcije na bazu nije uspjelo: ". $link->connect_error);
   }
 
-
-  $query = "INSERT INTO `usluga`(`naziv`, `informacije`, `cijena`, `id_dio`) VALUES ('" . $naziv . "', '" . $informacije . "', '" . $cijena . "', '" . $id_dio . "')";
-
-
+  if ($id_dio == null) {
+    $query = "INSERT INTO `usluga`(`naziv`, `informacije`, `cijena`) VALUES ('" . $naziv . "', '" . $informacije . "', '" . $cijena . "')";
+  } else {
+    $query = "INSERT INTO `usluga`(`naziv`, `informacije`, `cijena`, `id_dio`) VALUES ('" . $naziv . "', '" . $informacije . "', '" . $cijena . "', '" . $id_dio . "')";
+  }
 
   $result = mysqli_query($link, $query);
 
   //  Zatvaranje konekcije
   mysqli_close($link);
 
-  //print($naziv . $cijena . $informacije . $id_dio);
-
-
   header( 'Location: usluge.php');
-
 ?>

@@ -49,8 +49,8 @@
 
       <?php
         $servername = "127.0.0.1";
-        $username = "student"; 
-        $password = "student"; 
+        $username = "student";
+        $password = "student";
         $dbname = "popravak_vozila";
         // Stvaranje konekcije na bazu
         $link = new mysqli($servername, $username, $password, $dbname);
@@ -98,7 +98,7 @@
           </div>
           <div class="col">
             <label for="exampleInputSatnica1">Potreban dio (id)</label>
-            <input type="text" class="form-control" id="exampleInputSatnica1" placeholder="Potreban dio za ugradnju" value="0" name="id_dio">
+            <input type="text" class="form-control" id="exampleInputSatnica1" placeholder="Potreban dio za ugradnju" name="id_dio" value="">
           </div>
         </div>
         <input class="btn btn-primary" type="submit" value="Dodaj" id="exampleInputButton1">

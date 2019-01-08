@@ -15,7 +15,7 @@
 
     <form class="LoginForm" action="popravi_vozilo_process.php?id=<?php echo $_GET['id']?>" method="POST">
       <h3>Upiši podatke o obavljenom popravku:</h3>
-      
+
       <div class="form-group row">
         <label for="staticEmail" class="col-sm-2 col-form-label1">Broj šasije vozila:</label>
         <div class="col-sm-10">
@@ -42,6 +42,3 @@
 
   </body>
 </html>
-
-
-

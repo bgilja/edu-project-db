@@ -46,7 +46,7 @@
     <div class="price_list">
       <form action="popravi_vozilo.php?id=<?php echo $_GET['id']?>" method="POST">
         <input type="hidden" name="id" value="2">
-        <input type="submit" class="btn btn-secondary" value="Upiši novi popravak"> 
+        <input type="submit" class="btn btn-secondary" value="Upiši novi popravak">
       </form>
     </div>
 
@@ -77,9 +77,7 @@
           print("<tr>");
           print("<td>" . $row["broj_sasije"] . "</td><td>" . $row["marka"] . "</td><td>" . $row["model"] . "</td><td>" . $row["godina_proizvodnje"] . "</td><td>" . $row["oib_vlasnik"] . "</td> ");
           print('<td>
-                <form action="popravi_vozilo.php" method = "POST">
-                <input type="hidden" name="id" value="2">
-                
+                <form action="popravi_vozilo.php?id=' . $_GET["id"] . '" method = "POST">
                 <input type="submit" value="Upiši popravak" > </form></td>');
           print("</tr>");
         }
@@ -109,14 +107,19 @@
           die("Uspostavljanje konekcije na bazu nije uspjelo: ". $link->connect_error);
         }
 
-        $sql = "SELECT broj_sasije, marka, model, godina_proizvodnje, oib_vlasnik FROM Vozilo";
+        $id_zaposlenik = $_GET["id"];
+        $sql = "SELECT broj_sasije, marka, model, godina_proizvodnje, oib_vlasnik, id_usluga FROM Vozilo
+                inner join Popravak on Vozilo.broj_sasije = Popravak.id_vozilo where id_zaposlenik = $id_zaposlenik";
         $result = mysqli_query($link, $sql);
 
-
         while($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
+          $id_usluga = $row["id_usluga"];
+          $sql_usluga = "SELECT naziv FROM Usluga where id = $id_usluga";
+          $result_usluga = mysqli_query($link, $sql_usluga);
+          $usluga_naziv = mysqli_fetch_array($result_usluga, MYSQLI_BOTH);
           print("<tr>");
           print("<td>" . $row["broj_sasije"] . "</td><td>" . $row["marka"] . "</td><td>" . $row["model"] . "</td><td>" . $row["godina_proizvodnje"] . "</td><td>" . $row["oib_vlasnik"] . "</td> ");
-          print('<td></td>');
+          print("<td>". $usluga_naziv["naziv"] ."</td>");
           print("</tr>");
         }
 
