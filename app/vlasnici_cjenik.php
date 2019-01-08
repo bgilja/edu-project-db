@@ -41,42 +41,38 @@
     </div>
 
     <div class="price_list">
+      <h3>Usluge koje vršimo: </h3>
 
-    <h3>Usluge i cijene usluga koje vršimo:</h3>
-    <ul>
+      <table border="1" id="zaposlenici_table" class="table">
+      <tr><th>Naziv</th><th>Cijena (KN)</th><th>Dodatne informacije</th><th>Potreban dio</th></tr>
+
       <?php
-        $servername = "127.0.0.1"; //promjenio zbog baze na svom računalu, K
-        $username = "student"; //promjenio zbog baze na svom računalu, K
-        $password = "student"; //promjenio zbog baze na svom računalu, K
+        $servername = "127.0.0.1";
+        $username = "student";
+        $password = "student";
         $dbname = "popravak_vozila";
         // Stvaranje konekcije na bazu
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        $link = new mysqli($servername, $username, $password, $dbname);
         // Provjera uspjesnosti spajanja na bazu
-        if ($conn->connect_error) {
-          die("Uspostavljanje konekcije na bazu nije uspjelo: ". $conn->connect_error);
+        if ($link->connect_error) {
+          die("Uspostavljanje konekcije na bazu nije uspjelo: ". $link->connect_error);
         }
-        $sql = "SELECT id, naziv, cijena FROM Usluga";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        //  Provjera ima li rezultata
-        if ($result->num_rows > 0) {
-          // Printanje rezultata
-          // while($row = $result->fetch_assoc()) {
-          //     echo $row["id"]. ": " . $row["naziv"]. " " . $row["cijena"]. " kn<br>";
-          // }
-          while($row = $result->fetch_assoc()){
-            print("<li>" . $row["naziv"] . " - cijena: " . $row["cijena"] . " kn");
-          }
+
+        $sql = "SELECT id, naziv, informacije, cijena, id_dio FROM usluga";
+        $result = mysqli_query($link, $sql);
 
 
-        } else {
-          echo "Nema rezultata";
+        while($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
+          print("<tr>");
+          print("<td>" . $row["naziv"] . "</td><td>" . $row["cijena"] . "</td><td>" . $row["informacije"] . "</td><td>" . $row["id_dio"] . "</td>");
+          print("</tr>");
         }
-        //  Zatvaranje konekcije
-        $stmt->close();
+
+        mysqli_close($link);
+
       ?>
-    </ul>
+
+      </table>
     </div>
 
     <!-- Optional JavaScript -->

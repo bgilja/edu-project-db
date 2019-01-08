@@ -44,7 +44,7 @@
     <h3>Povijest vašeg vozila:</h4>
       <div>
         <table border="1" id="povijest_table" class="table">
-          <tr><th>Id_popravak</th><th>id_vozilo</th><th>Naziv usluge</th><th>Ime zaposlenika</th><th>Prezime zaposlenika</th><th>Cijena popravka</th></tr>
+          <tr><th>Id popravak</th><th>Broj sasije vozila</th><th>Naziv usluge</th><th>Ime zaposlenika</th><th>Prezime zaposlenika</th><th>Cijena popravka</th></tr>
 
           <?php
 
