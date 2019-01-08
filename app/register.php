@@ -16,12 +16,12 @@
     <form class="registerForm" action="registration_process.php" method="post">
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label>First name</label>
-          <input type="text" class="form-control" placeholder="First name" name="first_name">
+          <label>Ime</label>
+          <input type="text" class="form-control" placeholder="Ime" name="first_name">
         </div>
         <div class="form-group col-md-6">
-          <label>Last name</label>
-          <input type="text" class="form-control" placeholder="Last name" name="last_name">
+          <label>Prezime</label>
+          <input type="text" class="form-control" placeholder="Prezime" name="last_name">
         </div>
       </div>
       <div class="form-row">
@@ -30,22 +30,22 @@
           <input type="text" class="form-control" id="inputOib" placeholder="OIB" name="oib">
         </div>
         <div class="form-group col-md-6">
-          <label for="inputPassword4">Password</label>
-          <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password">
+          <label for="inputPassword4">Lozinka</label>
+          <input type="password" class="form-control" id="inputPassword" placeholder="Lozinka" name="password">
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="inputPhone">Phone Number</label>
+          <label for="inputPhone">Broj telefona</label>
           <input type="text" class="form-control" id="inputPhone" placeholder="0911234567" name="phone">
         </div>
         <div class="form-group col-md-6">
-          <label for="inputYear">Year of Birth</label>
+          <label for="inputYear">God. rođenja</label>
           <input type="number" class="form-control" id="inputYear" placeholder="1960" name="year">
         </div>
       </div>
       <div class="form-group">
-        <label for="inputAddress">Address</label>
+        <label for="inputAddress">Adresa</label>
         <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="address">
       </div>
       <input type="submit" class="btn btn-primary" id="registerButton" value="Login">

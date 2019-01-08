@@ -44,7 +44,8 @@
     </div>
 
     <div class="price_list">
-      <h3>Usluge koje vršimo: </h3>
+      <h3>Usluge: </h3>
+      <p>Provjerite usluge koje vršimo na vozilima.</p>
 
       <table border="1" id="zaposlenici_table" class="table">
       <tr><th>Naziv</th><th>Cijena (KN)</th><th>Dodatne informacije</th><th>Potreban dio</th></tr>

@@ -42,19 +42,23 @@
       </nav>
     </div>
 
+    <div class="jumbotron">
+      <h5 style="margin-left: 8%;">Zavirite u naše radionice...</h5>
+      
+      <hr class="my-4">
+      
+    </div>
+
     <div>
       <ul id="gallery">
         <li><img src="src/garage1.jpg" class="gallery-img" alt="Responsive image"></li>
         <li><img src="src/workshop1.jpg" class="gallery-img" alt="Responsive image"></li>
+        <li><img src="src/tire.jpg" class="gallery-img" alt="Responsive image"></li>
+        <li><img src="src/oil.jpg" class="gallery-img" alt="Responsive image"></li>
       </ul>
     </div>
 
-    <div class="jumbotron">
-      <h1 class="display-4">Hello, world!</h1>
-      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-      <hr class="my-4">
-      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    </div>
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

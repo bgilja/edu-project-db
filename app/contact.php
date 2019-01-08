@@ -44,10 +44,11 @@
     </div>
 
     <div class="price_list">
-      <h3>Trenutne radionice: </h3>
+      <h3>Radionice: </h3>
+      <p>Pozivom na neki od prikazanih brojeva telefona dogovorite servis za vaše vozilo.</p>
 
       <table border="1" id="zaposlenici_table" class="table">
-      <tr><td>Id</td><td>Adresa</td><td>Broj telefona</td></tr>
+      <tr><th>Id</th><th>Adresa</th><th>Broj telefona</th></tr>
 
       <?php
         $servername = "127.0.0.1";

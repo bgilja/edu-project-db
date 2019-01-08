@@ -14,7 +14,7 @@
   <body class="login-body">
 
     <form class="LoginForm" action="zaposlenici_login_process.php" method="POST">
-      <h1>Zaposlenici</h1>
+      <h1>Prijavi se kao zaposlenik</h1>
 
       <div class="form-group row">
         <label for="staticEmail" class="col-sm-2 col-form-label">ID</label>
@@ -24,9 +24,9 @@
       </div>
 
       <div class="form-group row">
-        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+        <label for="inputPassword" class="col-sm-2 col-form-label">Lozinka</label>
         <div class="col-sm-10">
-          <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="pass">
+          <input type="password" class="form-control" id="inputPassword" placeholder="Lozinka" name="pass">
         </div>
       </div>
       <input type="submit" class="btn btn-primary" id="loginButton" value="Login">

@@ -57,7 +57,7 @@
       <h3>Vozila: </h3>
 
       <table border="1" id="zaposlenici_table" class="table">
-      <tr><th>Broj sasije</th><th>Marka</th><th>Model</th><th>Godina proizvodnje</th><th>OIB vlasnika</th></tr>
+      <tr><th>Broj šasije</th><th>Marka</th><th>Model</th><th>Godina proizvodnje</th><th>OIB vlasnika</th></tr>
 
       <?php
         $id = $_GET['id'];
@@ -93,7 +93,7 @@
       <h3>Vozila koja sam popravljao: </h3>
 
       <table border="1" id="zaposlenici_table" class="table">
-      <tr><th>Broj sasije</th><th>Marka</th><th>Model</th><th>Godina proizvodnje</th><th>OIB vlasnika</th><th>ID Usluga</th><th>Usluga</th><th>Cijena</th></tr>
+      <tr><th>Broj šasije</th><th>Marka</th><th>Model</th><th>Godina proizvodnje</th><th>OIB vlasnika</th><th>ID Usluga</th><th>Usluga</th><th>Cijena</th></tr>
 
       <?php
         $servername = "127.0.0.1";

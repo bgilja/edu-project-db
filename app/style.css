@@ -85,8 +85,10 @@
 }
 
 #gallery {
-  display: inline;
+  /*display: inline;*/
   margin-left: 20px;
+  text-align: center;
+  
 }
 
 #gallery > li {
@@ -94,7 +96,8 @@
 }
 
 #gallery > li > img {
-  height: 550px;
+  /*height: 550px;*/
+  width: 650px;
   margin-top: 5px;
 }
 
