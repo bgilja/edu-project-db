@@ -30,6 +30,6 @@
   if ($flag) {
     header( 'Location: zaposlenici_home.php?id='.$id );
   } else {
-    header( 'Location:  index.php' );
+    header( 'Location:  zaposlenici_login.php' );
   }
 ?>

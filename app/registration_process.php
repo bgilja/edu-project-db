@@ -8,13 +8,13 @@
   $year = $_POST['year'];
   $address = $_POST['address'];
 
-  if (!isset($_POST['oib']) || strlen($_POST['oib']) < 11) {
-    header('Location:  register.php');
-  }
+  // if (!isset($_POST['oib']) || strlen($_POST['oib']) < 11) {
+  //   header('Location:  register.php');
+  // }
 
-  if (!isset($_POST['password']) || strlen($_POST['password']) < 8) {
-    header('Location:  register.php');
-  }
+  // if (!isset($_POST['password']) || strlen($_POST['password']) < 8) {
+  //   header('Location:  register.php');
+  // }
 
   $servername = "127.0.0.1";
   $username = "student";

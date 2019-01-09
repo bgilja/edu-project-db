@@ -44,7 +44,7 @@
       <h3>Usluge koje vršimo: </h3>
 
       <table border="1" id="zaposlenici_table" class="table">
-      <tr><th>Naziv</th><th>Cijena (KN)</th><th>Dodatne informacije</th><th>Potreban dio</th></tr>
+      <tr><th>Naziv</th><th>Cijena (KN)</th><th>Dodatne informacije</th></tr>
 
       <?php
         $servername = "127.0.0.1";
@@ -64,7 +64,7 @@
 
         while($row = mysqli_fetch_array($result, MYSQLI_BOTH)){
           print("<tr>");
-          print("<td>" . $row["naziv"] . "</td><td>" . $row["cijena"] . "</td><td>" . $row["informacije"] . "</td><td>" . $row["id_dio"] . "</td>");
+          print("<td>" . $row["naziv"] . "</td><td>" . $row["cijena"] . "</td><td>" . $row["informacije"] . "</td>");
           print("</tr>");
         }
 
